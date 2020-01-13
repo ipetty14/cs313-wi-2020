@@ -85,6 +85,7 @@
                 </div>
 
                 <div class="links">
+                    <a href="{{ url('hello') }}">Hello World</a>
                     <a href="{{ route('week03') }}">Week 3</a>
                     {{-- <a href="{{ route('week04') }}">Week 4</a>
                     <a href="{{ route('week05') }}">Week 5</a>
