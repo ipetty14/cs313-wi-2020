@@ -1,6 +1,4 @@
-@yield('layouts.header')
+@extends('layouts.header')
 
-@yield('content')
-
-@yield('footer')
+@extends('layouts.footer')
 

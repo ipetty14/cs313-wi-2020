@@ -19280,6 +19280,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/ta02.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/ta02.scss ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/week03.scss":
 /*!************************************!*\
   !*** ./resources/sass/week03.scss ***!
@@ -19292,15 +19303,16 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!******************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/week03.scss ***!
-  \******************************************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/ta02.scss ./resources/sass/week03.scss ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/ipetty/Library/Mobile Documents/com~apple~CloudDocs/cs313/cs313-php/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/ipetty/Library/Mobile Documents/com~apple~CloudDocs/cs313/cs313-php/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /Users/ipetty/Library/Mobile Documents/com~apple~CloudDocs/cs313/cs313-php/resources/sass/week03.scss */"./resources/sass/week03.scss");
+__webpack_require__(/*! /Users/ipetty/Library/Mobile Documents/com~apple~CloudDocs/byui/cs313/cs313-php/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/ipetty/Library/Mobile Documents/com~apple~CloudDocs/byui/cs313/cs313-php/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/ipetty/Library/Mobile Documents/com~apple~CloudDocs/byui/cs313/cs313-php/resources/sass/ta02.scss */"./resources/sass/ta02.scss");
+module.exports = __webpack_require__(/*! /Users/ipetty/Library/Mobile Documents/com~apple~CloudDocs/byui/cs313/cs313-php/resources/sass/week03.scss */"./resources/sass/week03.scss");
 
 
 /***/ })

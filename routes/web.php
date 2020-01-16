@@ -19,6 +19,16 @@ Route::get('/hello', function() {
     return view('hello');
 });
 
+Route::prefix('week02')->group(function() {
+    Route::get('/', function() {
+        return view('week02');
+    })->name('week02');
+
+    Route::get('/ta02', function() {
+        return view('ta02');
+    });
+});
+
 Route::prefix('week03')->group(function() {
     Route::get('/', 'ShoppingProductsController@index')->name('week03');
     Route::get('cart', 'ShoppingProductsController@cart');

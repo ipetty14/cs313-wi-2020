@@ -1,0 +1,29 @@
+.content-container {
+    #div-1, #div-2, #div-3 {
+        font-size: 24px;
+        width: 150px;
+        height: 150px;
+        margin: 1rem;
+        position: relative;
+
+        span {
+            position: absolute;
+        }
+
+        &:hover {
+            font-weight: bold;
+        }
+    }
+
+    #div-1 {
+        background-color: red;
+    }
+
+    #div-2 {
+        background-color: green;
+    }
+
+    #div-3 {
+        background-color: blue;
+    }
+}
