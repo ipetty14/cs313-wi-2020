@@ -10,11 +10,15 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> --}}
 
         <title>@yield('title')</title>
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
-        @stack('css')
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+
+        <!-- Custom CSS -->
+        @stack('css')
+
     </head>
     <body>
         <section class="content-container">
