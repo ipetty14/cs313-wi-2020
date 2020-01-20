@@ -81,45 +81,30 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/ta02.js":
-/*!******************************!*\
-  !*** ./resources/js/ta02.js ***!
-  \******************************/
+/***/ "./resources/js/welcome.js":
+/*!*********************************!*\
+  !*** ./resources/js/welcome.js ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var squareThreeVisibile = true;
-$('#ta02-button-1').on('click', function () {
-  var newColor = $('#ta02-input-color').val();
-  $('#div-1').css('background-color', newColor);
-});
-$('#ta02-button-2').on('click', function () {
-  if (squareThreeVisibile) {
-    $('#div-3').css('opacity', '0');
-    squareThreeVisibile = false;
-    $(this).html('Show Square 3');
-  } else {
-    $('#div-3').css('opacity', '1');
-    squareThreeVisibile = true;
-    $(this).html('Hide Square 3');
-  }
-});
+
 
 /***/ }),
 
-/***/ 2:
-/*!************************************!*\
-  !*** multi ./resources/js/ta02.js ***!
-  \************************************/
+/***/ 1:
+/*!***************************************!*\
+  !*** multi ./resources/js/welcome.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/ipetty/Library/Mobile Documents/com~apple~CloudDocs/byui/cs313/cs313-php/resources/js/ta02.js */"./resources/js/ta02.js");
+module.exports = __webpack_require__(/*! /Users/ipetty/Library/Mobile Documents/com~apple~CloudDocs/byui/cs313/cs313-php/resources/js/welcome.js */"./resources/js/welcome.js");
 
 
 /***/ })

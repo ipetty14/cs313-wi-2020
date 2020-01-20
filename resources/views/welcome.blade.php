@@ -3,23 +3,29 @@
 @section('title', 'CS313')
 
 @section('content')
-<div class="flex-center position-ref full-height">
-    <div class="content">
-        <div class="title m-b-md">
+<div class="flex position-ref header">
+    <div class="title-content">
+        <div class="title m-b-md m-l-md">
             CS 313
         </div>
-
+    </div>
+    <div class="menu-content top-rights">
         <div class="links">
-            <a href="{{ url('hello') }}">Hello World</a>
-            <a href="{{ route('week02') }}">Week 2</a>
-            <a href="{{ route('week03') }}">Week 3</a>
-            {{-- <a href="{{ route('week04') }}">Week 4</a>
-            <a href="{{ route('week05') }}">Week 5</a>
-            <a href="{{ route('week06') }}">Week 6</a>
-            <a href="{{ route('week07') }}">Week 7</a>
-            <a href="{{ route('team-activities') }}">Team Activities</a> --}}
+            <a href="{{ url('assignments') }}">Assignments</a>
         </div>
     </div>
 </div>
-@endsection
 
+<div class="flex position-ref">
+    <div class="content">
+        <div class="hover-shine ">
+            <figure><a id="pop_up" href="{{ secure_asset('assets/images/Prague.jpeg') }}"><img src="{{ secure_asset('assets/images/Prague.jpeg') }}" /></a></figure>
+        </div>
+    </div>
+    <div class="content">
+        <h2>Welcome to my CS313 Homepage</h2>
+        <p>I lived in the Czech Republic for two years and it is a magical place. I want to share that through this picture of Prague at Christmas time.</p>
+        <p>The assignments can be found in the menu above.</p>
+    </div>
+</div>
+@endsection
