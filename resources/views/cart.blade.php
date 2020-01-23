@@ -51,7 +51,7 @@
             <td class="text-center"><strong>Total {{ $total }}</strong></td>
         </tr>
         <tr>
-            <td><a href="{{ url('/week03') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+            <td><a href="{{ url('/week03/wa03') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
             <td colspan="2" class="hidden-xs"></td>
             <td><a href="{{ url('week03/checkout') }}" class="btn btn-primary go-to-checkout">Checkout</a></td>
             <td class="hidden-xs text-center"><strong>Total ${{ $total }}</strong></td>
@@ -71,7 +71,7 @@
            var ele = $(this);
 
             $.ajax({
-               url: '{{ url('update-cart') }}',
+               url: '{{ url('/week03/update-cart') }}',
                method: "patch",
                data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id"), quantity: ele.parents("tr").find(".quantity").val()},
                success: function (response) {
@@ -85,9 +85,9 @@
 
             var ele = $(this);
 
-            if(confirm("Are you sure")) {
+            if(confirm("Are you sure you want to remove this product?")) {
                 $.ajax({
-                    url: '{{ url('remove-from-cart') }}',
+                    url: '{{ url('/week03/remove-from-cart') }}',
                     method: "DELETE",
                     data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id")},
                     success: function (response) {

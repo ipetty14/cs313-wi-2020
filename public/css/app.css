@@ -58,6 +58,10 @@ body {
   font-size: 84px;
 }
 
+.title.center {
+  text-align: center;
+}
+
 .links > a {
   color: #636b6f;
   padding: 0 25px;

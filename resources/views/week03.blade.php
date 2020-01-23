@@ -1,17 +1,17 @@
 @extends('layouts.header')
 
-@section('title', 'Week 02')
+@section('title', 'Week 03')
 
 @section('content')
 <div class="flex-center position-ref full-height">
     <div class="content">
         <div class="title center m-b-md">
-            Week 2
+            Week 3
         </div>
 
         <div class="links">
             <a href="{{ url('/') }}">Home</a>
-            <a href="{{ url('week02/ta02') }}">Team Activity 2</a>
+            <a href="{{ url('week03/wa03') }}">Weekly Activity 3</a>
         </div>
     </div>
 </div>

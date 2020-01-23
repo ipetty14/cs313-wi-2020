@@ -34,7 +34,10 @@ Route::prefix('week02')->group(function() {
 });
 
 Route::prefix('week03')->group(function() {
-    Route::get('/', 'ShoppingProductsController@index')->name('week03');
+    Route::get('/', function () {
+        return view('week03');
+    })->name('week03');
+    Route::get('/wa03', 'ShoppingProductsController@index');
     Route::get('cart', 'ShoppingProductsController@cart');
     Route::get('add-to-cart/{id}', 'ShoppingProductsController@addToCart');
     Route::patch('update-cart', 'ShoppingProductsController@update');

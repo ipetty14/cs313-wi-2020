@@ -47,6 +47,10 @@ html, body {
 
 .title {
     font-size: 84px;
+
+    &.center {
+        text-align: center;
+    }
 }
 
 .links > a {
