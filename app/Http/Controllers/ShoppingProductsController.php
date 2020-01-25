@@ -110,9 +110,19 @@ class ShoppingProductsController extends Controller
     }
 
     public function submit(Request $request) {
-        $cart = session()->get('cart');
+        $checkout_information = [
+            'first_name'     => \htmlentities($request->input('firstName'), ENT_QUOTES, 'UTF-8', false),
+            'last_name'      => \htmlentities($request->input('lastName'), ENT_QUOTES, 'UTF-8', false),
+            'address_1'      => \htmlentities($request->input('address-1'), ENT_QUOTES, 'UTF-8', false),
+            'address_2'      => \htmlentities($request->input('address-2'), ENT_QUOTES, 'UTF-8', false),
+            'city'           => \htmlentities($request->input('city'), ENT_QUOTES, 'UTF-8', false),
+            'state'          => \htmlentities($request->input('state'), ENT_QUOTES, 'UTF-8', false),
+            'zip_code'       => \htmlentities($request->input('zipCode'), ENT_QUOTES, 'UTF-8', false),
+        ];
 
-        return 'hello';
+        session()->put('checkout_information', $checkout_information);
+
+        return redirect()->action( 'ShoppingProductsController@confirmation' );
     }
 
     public function confirmation()
