@@ -2,6 +2,15 @@
     background-color: #F8F8F8;
 }
 
+.home {
+    display: flex;
+    align-items: center;
+
+    i {
+        color: #17a2b8;
+    }
+}
+
 .dropdown {
     float:right;
     padding-right: 30px;

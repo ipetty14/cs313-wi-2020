@@ -19,7 +19,12 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-lg-12 col-sm-12 col-12 main-section">
+            <div class="col-1 main-section home">
+                <a href={{ url('/week03/wa03') }}>
+                    <i class="fa fa-home fa-2x"></i>
+                </a>
+            </div>
+            <div class="col-11 main-section">
                 <div class="dropdown">
                     <button type="button" class="btn btn-info" data-toggle="dropdown">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
