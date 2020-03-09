@@ -1,0 +1,27 @@
+body {
+    font-family: "Nunito", sans-serif;
+
+    .content-title-section {
+        padding: 2rem 3rem;
+        h1 {
+            font-weight: bold;
+        }
+    }
+
+    .content-table {
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .player-image {
+            border-radius: 50%;
+        }
+    }
+}

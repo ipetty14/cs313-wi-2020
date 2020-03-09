@@ -14,11 +14,7 @@
             <a href="{{ url('hello') }}">Hello World</a>
             <a href="{{ route('week02') }}">Week 2</a>
             <a href="{{ route('week03') }}">Week 3</a>
-            {{-- <a href="{{ route('week04') }}">Week 4</a>
-            <a href="{{ route('week05') }}">Week 5</a>
-            <a href="{{ route('week06') }}">Week 6</a>
-            <a href="{{ route('week07') }}">Week 7</a>
-            <a href="{{ route('team-activities') }}">Team Activities</a> --}}
+            <a href="{{ route('teams.index') }}">Project 1</a>
         </div>
     </div>
 </div>

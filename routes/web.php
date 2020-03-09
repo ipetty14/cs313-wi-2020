@@ -47,23 +47,7 @@ Route::prefix('week03')->group(function() {
     Route::get('confirmation', 'ShoppingProductsController@confirmation');
 });
 
-
-// Route::get('/week04', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/week05', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/week06', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/week07', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/team-activities', function () {
-//     return view('team_activities');
-// });
+Route::prefix('project-1')->group(function () {
+    Route::resource('players', 'PlayersController');
+    Route::resource('teams', 'TeamsController');
+});
