@@ -10,6 +10,20 @@ body .content-title-section h1 {
   font-weight: bold;
 }
 
+body .content-title-section .title-wrapper .col-3 {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+body .content-title-section .title-wrapper .col-9 {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
 body .content-table a {
   text-decoration: none;
   color: black;
@@ -23,5 +37,13 @@ body .content-table img {
 
 body .content-table .player-image {
   border-radius: 50%;
+}
+
+body .content-body td {
+  font-size: 1.25rem;
+}
+
+body .content-body .team-name {
+  font-size: 1.5rem;
 }
 

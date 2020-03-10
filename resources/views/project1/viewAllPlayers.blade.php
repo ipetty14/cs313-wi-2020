@@ -1,5 +1,7 @@
 @extends('project1.viewAllTemplate')
 
+@section('title', 'Players')
+
 @section('content-title-section')
 <h1>View All Players</h1>
 @endsection

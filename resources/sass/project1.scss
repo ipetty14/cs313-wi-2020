@@ -6,6 +6,18 @@ body {
         h1 {
             font-weight: bold;
         }
+
+        .title-wrapper {
+            .col-3 {
+                display: flex;
+                justify-content: center;
+            }
+
+            .col-9 {
+                display: flex;
+                align-items: center;
+            }
+        }
     }
 
     .content-table {
@@ -22,6 +34,16 @@ body {
 
         .player-image {
             border-radius: 50%;
+        }
+    }
+
+    .content-body {
+        td {
+            font-size: 1.25rem;
+        }
+
+        .team-name {
+            font-size: 1.5rem;
         }
     }
 }

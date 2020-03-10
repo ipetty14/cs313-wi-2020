@@ -48,11 +48,12 @@
             </section>
             @show
 
-            <section class="content-title-section">
+
+            <section class="content-title-section container">
                 @yield('content-title-section')
             </section>
 
-            <section class="content-body">
+            <section class="content-body container">
                 @yield('content-body')
             </section>
         </main>
