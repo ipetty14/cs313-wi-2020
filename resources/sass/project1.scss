@@ -38,6 +38,11 @@ body {
     }
 
     .content-body {
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
         td {
             font-size: 1.25rem;
         }

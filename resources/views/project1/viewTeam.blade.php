@@ -25,7 +25,7 @@
     <tbody>
         @foreach ($team->players as $player)
             <tr>
-                <td style="width: 30%"><img src="{{ $player->player_image }}"></td>
+                <td style="width: 30%"><a href="/project-1/players/{{ $player->id }}" ><img src="{{ $player->player_image }}"></a></td>
                 <td style="width: 30%">{{ $player->first_name }}</td>
                 <td style="width: 25%">{{ $player->last_name }}</td>
                 <td style="width: 25%">{{ $player->player_position }}</td>

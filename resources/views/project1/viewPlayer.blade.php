@@ -39,8 +39,8 @@
     <table class="table table-hover">
         <tbody>
             <tr>
-                <td style="width: 33%"><img src="{{ $player->team->first()->team_logo }}"></td>
-                <td class="team-name">{{ $player->team->first()->team_name }}</td>
+                <td style="width: 33%"><a href="/project-1/teams/{{ $player->team->first()->id }}"><img src="{{ $player->team->first()->team_logo }}"></a></td>
+                <td class="team-name"><a href="/project-1/teams/{{ $player->team->first()->id }}">{{ $player->team->first()->team_name }}</a></td>
             </tr>
         </tbody>
     </table>
