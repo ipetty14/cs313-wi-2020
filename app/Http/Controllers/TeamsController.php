@@ -12,10 +12,16 @@ class TeamsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index( Request $request )
     {
         $limit = 30;
-        $teams = Team::orderBy('team_name')->paginate( $limit );
+        $search_term = $request->input( 'search', false );
+
+        if ( $search_term ) {
+            $teams = Team::where( 'team_name', 'ilike', '%' . $search_term . '%' )->orderBy('team_name')->paginate( $limit );
+        } else {
+            $teams = Team::orderBy( 'team_name' )->paginate( $limit );
+        }
 
         return view( 'project1.viewAllTeams ', compact( 'teams' ) );
     }

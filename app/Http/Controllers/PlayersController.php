@@ -12,10 +12,18 @@ class PlayersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index( Request $request )
     {
         $limit = 30;
-        $players = Player::orderBy('last_name')->paginate( $limit );
+        $search_term = $request->input( 'search', false );
+
+        if ( $search_term ) {
+            $players = Player::where( 'first_name', 'ilike', '%' . $search_term . '%' )
+                               ->orWhere( 'last_name', 'ilike', '%' . $search_term . '%' )
+                               ->orderBy( 'last_name' )->paginate( $limit );
+        } else {
+            $players = Player::orderBy( 'last_name' )->paginate( $limit );
+        }
 
         return view( 'project1.viewAllPlayers', compact( 'players' ) );
     }
