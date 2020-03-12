@@ -6,14 +6,14 @@
 <form class="form-inline my-2 my-lg-0" action="/project-1/teams">
     {{ csrf_field() }}
   <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search">
-  <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+  <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fas fa-search mr-2"></i>Search</button>
 </form>
 @endsection
 
 @section('content-title-section')
 <div class="d-flex justify-content-between">
     <h1>View All Teams</h1>
-    <a href="/project-1/teams/create" class="btn btn-success header-link">Create Team</a>
+    <a href="/project-1/teams/create" class="btn btn-primary fit-link">Create Team</a>
 </div>
 @endsection
 

@@ -17,8 +17,9 @@
         <div class="col-4 pl-0">
             <h2>Players</h2>
         </div>
-        <div class="col-8 pr-0 align-right">
-            <a href="/project-1/teams/{{ $team->id }}/edit" class="btn btn-danger text-white float-right">Edit Team Information</a>
+        <div class="col-8 pr-0 d-flex justify-content-end">
+            <a href="/project-1/teams/{{ $team->id }}/edit" class="btn btn-primary text-white float-right fit-link mr-2">Edit Team Information</a>
+            <a href="/project-1/teams/{{ $team->id }}/delete" class="btn btn-danger text-white float-right fit-link"><i class="fas fa-trash-alt mr-2"></i>Delete</a>
         </div>
     </div>
 </div>

@@ -1,6 +1,10 @@
 body {
     font-family: "Nunito", sans-serif;
 
+    a.fit-link {
+        height: fit-content;
+    }
+
     .content-title-section {
         padding: 2rem 0rem;
 
@@ -18,10 +22,6 @@ body {
                 display: flex;
                 align-items: center;
             }
-        }
-
-        a.header-link {
-            height: fit-content;
         }
     }
 

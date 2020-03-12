@@ -2,6 +2,12 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
+body a.fit-link {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 body .content-title-section {
   padding: 2rem 0rem;
 }
@@ -22,12 +28,6 @@ body .content-title-section .title-wrapper .col-9 {
   display: flex;
   -webkit-box-align: center;
           align-items: center;
-}
-
-body .content-title-section a.header-link {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
 }
 
 body .content-table a {
