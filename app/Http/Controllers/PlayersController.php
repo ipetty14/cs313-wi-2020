@@ -54,7 +54,7 @@ class PlayersController extends Controller
         $player_position = $request->input('playerPosition', false);
         $player_image    = $request->input('playerImage', false);
 
-        $player = Player::find( $id );
+        $player = new Player;
 
         $player->first_name      = $first_name;
         $player->last_name       = $last_name;
