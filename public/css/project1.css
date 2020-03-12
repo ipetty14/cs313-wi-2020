@@ -3,11 +3,11 @@ body {
 }
 
 body .content-title-section {
-  padding: 2rem 3rem;
+  padding: 2rem 0rem;
 }
 
-body .content-title-section h1 {
-  font-weight: bold;
+body .content-title-section.view-all {
+  padding: 2rem;
 }
 
 body .content-title-section .title-wrapper .col-3 {
@@ -22,6 +22,12 @@ body .content-title-section .title-wrapper .col-9 {
   display: flex;
   -webkit-box-align: center;
           align-items: center;
+}
+
+body .content-title-section a.header-link {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 body .content-table a {

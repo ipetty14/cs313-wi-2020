@@ -11,7 +11,10 @@
 @endsection
 
 @section('content-title-section')
-<h1>View All Teams</h1>
+<div class="d-flex justify-content-between">
+    <h1>View All Teams</h1>
+    <a href="/project-1/teams/create" class="btn btn-success header-link">Create Team</a>
+</div>
 @endsection
 
 @section('content-table')

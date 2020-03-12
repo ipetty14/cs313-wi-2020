@@ -44,7 +44,7 @@
             </section>
             @show
 
-            <section class="content-title-section">
+            <section class="content-title-section view-all">
                 @yield('content-title-section')
             </section>
 

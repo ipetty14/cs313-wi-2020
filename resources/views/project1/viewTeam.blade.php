@@ -2,17 +2,26 @@
 
 @section('content-title-section')
 <div class="row">
-    <div class="col-3">
+    <div class="col-3 d-flex justify-content-center">
         <img src="{{ $team->team_logo }}">
     </div>
-    <div class="col-9">
-        <h1>{{ $team->team_name }}</h1>
+    <div class="col-9 d-flex align-items-center">
+        <h1 class="display-4">{{ $team->team_name }}</h1>
     </div>
 </div>
 @endsection
 
 @section('content-body')
-<h2>Players</h2>
+<div class="container">
+    <div class="row justify-content-around">
+        <div class="col-4 pl-0">
+            <h2>Players</h2>
+        </div>
+        <div class="col-8 pr-0 align-right">
+            <a href="/project-1/teams/{{ $team->id }}/edit" class="btn btn-danger text-white float-right">Edit Team Information</a>
+        </div>
+    </div>
+</div>
 
 @if ( $team->players )
 <table class="table table-hover">

@@ -2,9 +2,10 @@ body {
     font-family: "Nunito", sans-serif;
 
     .content-title-section {
-        padding: 2rem 3rem;
-        h1 {
-            font-weight: bold;
+        padding: 2rem 0rem;
+
+        &.view-all {
+            padding: 2rem;
         }
 
         .title-wrapper {
@@ -17,6 +18,10 @@ body {
                 display: flex;
                 align-items: center;
             }
+        }
+
+        a.header-link {
+            height: fit-content;
         }
     }
 

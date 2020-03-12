@@ -4,11 +4,11 @@
 
 @section('content-title-section')
 <div class="row">
-    <div class="col-3">
+    <div class="col-3 d-flex justify-content-center">
         <img src="{{ $player->player_image }}">
     </div>
-    <div class="col-9">
-        <h1>{{ $player->first_name }} {{ $player->last_name }}</h1>
+    <div class="col-9 d-flex align-items-center">
+        <h1 class="display-4">{{ $player->first_name }} {{ $player->last_name }}</h1>
     </div>
 </div>
 @endsection
@@ -16,10 +16,10 @@
 @section('content-body')
 <div class="container">
     <div class="row justify-content-around">
-        <div class="col-4">
+        <div class="col-4 pl-0">
             <h2>Player Information</h2>
         </div>
-        <div class="col-8 align-right">
+        <div class="col-8 pr-0 align-right">
             <a href="/project-1/players/{{ $player->id }}/edit" class="btn btn-danger text-white float-right">Edit Player Information</a>
         </div>
     </div>
