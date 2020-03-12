@@ -14,7 +14,16 @@
 @endsection
 
 @section('content-body')
-<h2>Player Information</h2>
+<div class="container">
+    <div class="row justify-content-around">
+        <div class="col-4">
+            <h2>Player Information</h2>
+        </div>
+        <div class="col-8 align-right">
+            <a href="/project-1/players/{{ $player->id }}/edit" class="btn btn-danger text-white float-right">Edit Player Information</a>
+        </div>
+    </div>
+</div>
 
 <table class="table table-hover mb-5">
     <thead>

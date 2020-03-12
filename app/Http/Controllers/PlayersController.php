@@ -35,7 +35,7 @@ class PlayersController extends Controller
      */
     public function create()
     {
-        return view( 'project1.playerCreator' );
+        return view( 'project1.createPlayer' );
     }
 
     /**
@@ -46,7 +46,29 @@ class PlayersController extends Controller
      */
     public function store( Request $request )
     {
-        //
+        $first_name      = $request->input('firstName', false);
+        $last_name       = $request->input('lastName', false);
+        $height          = $request->input('height', false);
+        $weight          = $request->input('weight', false);
+        $jersey_number   = $request->input('jerseyNumber', false);
+        $player_position = $request->input('playerPosition', false);
+        $player_image    = $request->input('playerImage', false);
+
+        $player = Player::find( $id );
+
+        $player->first_name      = $first_name;
+        $player->last_name       = $last_name;
+        $player->height          = $height;
+        $player->weight          = $weight;
+        $player->jersey_number   = $jersey_number;
+        $player->player_position = $player_position;
+        $player->player_image    = $player_image;
+
+        $player->save();
+
+        $id = $player->id;
+
+        return \redirect("/project-1/players/$id");
     }
 
     /**
@@ -70,7 +92,9 @@ class PlayersController extends Controller
      */
     public function edit( $id )
     {
-        //
+        $player = Player::with( 'team' )->findOrFail( $id );
+
+        return view( 'project1.editPlayer', compact( 'player' ) );
     }
 
     /**
@@ -82,7 +106,25 @@ class PlayersController extends Controller
      */
     public function update( Request $request, $id )
     {
-        //
+        $first_name      = $request->input('firstName', false);
+        $last_name       = $request->input('lastName', false);
+        $height          = $request->input('height', false);
+        $weight          = $request->input('weight', false);
+        $jersey_number   = $request->input('jerseyNumber', false);
+        $player_position = $request->input('playerPosition', false);
+
+        $player = Player::find( $id );
+
+        $player->first_name      = $first_name;
+        $player->last_name       = $last_name;
+        $player->height          = $height;
+        $player->weight          = $weight;
+        $player->jersey_number   = $jersey_number;
+        $player->player_position = $player_position;
+
+        $player->save();
+
+        return \redirect("/project-1/players/$id");
     }
 
     /**
