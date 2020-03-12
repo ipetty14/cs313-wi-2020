@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Team;
+use App\Player;
 
 class TeamsController extends Controller
 {
@@ -33,7 +34,22 @@ class TeamsController extends Controller
      */
     public function create()
     {
-        //
+        $players = Player::with( 'team' )->get();
+
+        $free_agents = [];
+
+        // Find players without a team
+        foreach ( $players as $player ) {
+            if ( count( $player->team ) < 1 ) {
+                array_push( $free_agents, $player );
+            }
+        }
+
+        $free_agent_collection = collect( $free_agents );
+
+        return view( 'project1.createTeam', [
+            'free_agents' => $free_agent_collection
+        ]);
     }
 
     /**
@@ -44,7 +60,22 @@ class TeamsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $team_name      = $request->input( 'teamName', false );
+        $team_logo      = $request->input( 'teamLogo', false );
+        $players_to_add = $request->input( 'freeAgents', false );
+
+        $team = new Team;
+
+        $team->team_name = $team_name;
+        $team->team_logo = $team_logo;
+
+        if ( $team->save() ) {
+            foreach ( $players_to_add as $player_id ) {
+                $team->players()->attach( $player_id );
+            }
+        }
+
+        return redirect( '/project-1/teams' );
     }
 
     /**
@@ -55,7 +86,7 @@ class TeamsController extends Controller
      */
     public function show($id)
     {
-        $team = Team::with('players')->findOrFail($id);
+        $team = Team::with( 'players' )->findOrFail( $id );
 
         return view( 'project1.viewTeam', compact( 'team' ) );
     }
