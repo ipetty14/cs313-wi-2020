@@ -48,6 +48,9 @@ Route::prefix('week03')->group(function() {
 });
 
 Route::prefix('project-1')->group(function () {
+    Route::get('/', function() {
+        return redirect( 'project-1/teams' );
+    });
     Route::resource('players', 'PlayersController');
     Route::resource('teams', 'TeamsController');
 });
