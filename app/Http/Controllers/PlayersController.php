@@ -14,7 +14,7 @@ class PlayersController extends Controller
      */
     public function index( Request $request )
     {
-        $limit = 30;
+        $limit = 1000;
         $search_term = $request->input( 'search', false );
 
         if ( $search_term ) {
@@ -135,6 +135,10 @@ class PlayersController extends Controller
      */
     public function destroy( $id )
     {
-        //
+        $player = Player::find( $id );
+
+        $player->delete();
+
+        return \redirect( '/project-1/players' );
     }
 }

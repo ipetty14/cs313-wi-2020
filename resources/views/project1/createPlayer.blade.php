@@ -1,6 +1,6 @@
 @extends('project1.viewOneTemplate')
 
-@section('title', 'View Player')
+@section('title', 'Create Player')
 
 @section('content-title-section')
 

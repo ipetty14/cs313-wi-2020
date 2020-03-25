@@ -21,7 +21,11 @@
         </div>
         <div class="col-8 pr-0 d-flex justify-content-end">
             <a href="/project-1/players/{{ $player->id }}/edit" class="btn btn-primary text-white float-right fit-link mr-2">Edit Player Information</a>
-            <a href="/project-1/players/{{ $player->id }}/delete" class="btn btn-danger text-white float-right fit-link"><i class="fas fa-trash-alt mr-2"></i>Delete</a>
+            <form method="POST" action{{ route( 'players.destroy', [ $player->id ] ) }}>
+                {{ csrf_field() }}
+                {{ method_field( 'DELETE' ) }}
+                <button class="btn btn-danger text-white float-right fit-link" type="submit"><i class="fas fa-trash-alt mr-2"></i>Delete</button>
+            </form>
         </div>
     </div>
 </div>
@@ -35,7 +39,7 @@
     </thead>
     <tbody>
         <tr>
-            <td>{{ $player->height }}</td>
+            <td>{{ floor( $player->height / 12 ) }}' {{ $player->height % 12 }}"</td>
             <td>{{ $player->weight }}</td>
             <td>{{ $player->jersey_number }}</td>
             <td>{{ $player->player_position }}</td>

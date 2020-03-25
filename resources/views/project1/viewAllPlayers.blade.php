@@ -28,7 +28,6 @@
         @endforeach
     </tbody>
 </table>
-
 {{ $players->links() }}
 @endsection
 

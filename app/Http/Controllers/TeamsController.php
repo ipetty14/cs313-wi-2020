@@ -15,7 +15,7 @@ class TeamsController extends Controller
      */
     public function index( Request $request )
     {
-        $limit = 30;
+        $limit = 1000;
         $search_term = $request->input( 'search', false );
 
         if ( $search_term ) {
@@ -97,9 +97,26 @@ class TeamsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit( $id )
     {
-        //
+        $team = Team::with( 'players' )->find( $id );
+        $players = Player::with( 'team' )->get();
+
+        $free_agents = [];
+
+        // Find players without a team
+        foreach ( $players as $player ) {
+            if ( count( $player->team ) < 1 ) {
+                array_push( $free_agents, $player );
+            }
+        }
+
+        $free_agent_collection = collect( $free_agents );
+
+        return view( 'project1.editTeam', [
+            'team' => $team,
+            'free_agents' => $free_agent_collection
+        ]);
     }
 
     /**
@@ -109,9 +126,37 @@ class TeamsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update( Request $request, $id )
     {
-        //
+        $team_name        = $request->input( 'teamName', false );
+        $team_logo        = $request->input( 'teamLogo', false );
+        $players_to_add   = $request->input( 'freeAgents', false );
+        $player_to_remove = $request->input( 'playerIdToRemove', false );
+
+        $team = Team::find( $id );
+
+        if ( $team_name ) {
+            $team->team_name = $team_name;
+        }
+
+        if ( $team_logo ) {
+            $team->team_logo = $team_logo;
+        }
+
+        if ( $team->save() ) {
+            if ( $players_to_add ) {
+                foreach ( $players_to_add as $player_id ) {
+                    $team->players()->attach( $player_id );
+                }
+            }
+
+            if ( $player_to_remove ) {
+                $team->players()->detach( $player_to_remove );
+            }
+
+        }
+
+        return redirect( "/project-1/teams/$team->id" );
     }
 
     /**
@@ -122,6 +167,10 @@ class TeamsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $team = Team::find( $id );
+
+        $team->delete();
+
+        return \redirect( '/project-1/teams' );
     }
 }
